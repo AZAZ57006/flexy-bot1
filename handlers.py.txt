@@ -1,0 +1,17 @@
+from aiogram import types, F
+from aiogram.filters import Command
+
+def setup_handlers(dp):
+@dp.message(Command("start"))
+async def cmd_start(message: types.Message):
+# هنا سنضع لاحقاً أزرار القائمة الرئيسية (خدمات، رصيد، تقارير)
+await message.answer("أهلاً بك في Esrecharge، اختر الخدمة من القائمة:")
+
+@dp.message(F.text)
+async def handle_flexy(message: types.Message):
+# هنا نكتشف الرقم ونحدد نوع العملية
+user_input = message.text
+if len(user_input) >= 9:
+await message.answer(f"تم استقبال الرقم: {user_input}\nيرجى اختيار المبلغ أو الخدمة:")
+else:
+await message.answer("يرجى إدخال رقم هاتف صحيح.")

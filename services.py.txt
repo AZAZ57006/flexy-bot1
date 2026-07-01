@@ -1,0 +1,6 @@
+def get_flexy_options():
+return ["50 DA", "100 DA", "500 DA", "1000 DA"]
+
+def process_activy_choice(choice):
+# منطق تنفيذ طلب الـ Activy المباشر
+return f"تم تنفيذ طلبك بنجاح: {choice}"
